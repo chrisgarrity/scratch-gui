@@ -1,29 +1,119 @@
 var GUI =
-(window["webpackJsonpGUI"] = window["webpackJsonpGUI"] || []).push([[1],{
+(window["webpackJsonpGUI"] = window["webpackJsonpGUI"] || []).push([[4],{
 
-/***/ 394:
+/***/ 1471:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
-// imports
+"use strict";
 
 
-// module
-exports.push([module.i, ".player_stage-only_3WHZN {\n    width: calc(480px + 1rem);\n}\n\n.player_stage-only_3WHZN * {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n", ""]);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-// exports
-exports.locals = {
-	"stage-only": "player_stage-only_3WHZN",
-	"stageOnly": "player_stage-only_3WHZN"
+var _classnames = __webpack_require__(5);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(33);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactRedux = __webpack_require__(7);
+
+var _box = __webpack_require__(15);
+
+var _box2 = _interopRequireDefault(_box);
+
+var _gui = __webpack_require__(123);
+
+var _gui2 = _interopRequireDefault(_gui);
+
+var _hashParserHoc = __webpack_require__(159);
+
+var _hashParserHoc2 = _interopRequireDefault(_hashParserHoc);
+
+var _appStateHoc = __webpack_require__(160);
+
+var _appStateHoc2 = _interopRequireDefault(_appStateHoc);
+
+var _mode = __webpack_require__(115);
+
+var _player = __webpack_require__(1472);
+
+var _player2 = _interopRequireDefault(_player);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+if ("production" === 'production' && (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
+    // Warn before navigating away
+    window.onbeforeunload = function () {
+        return true;
+    };
+}
+
+var Player = function Player(_ref) {
+    var isPlayerOnly = _ref.isPlayerOnly,
+        onSeeInside = _ref.onSeeInside;
+    return _react2.default.createElement(
+        _box2.default,
+        {
+            className: (0, _classnames2.default)(_defineProperty({}, _player2.default.stageOnly, isPlayerOnly))
+        },
+        isPlayerOnly && _react2.default.createElement(
+            'button',
+            { onClick: onSeeInside },
+            'See inside'
+        ),
+        _react2.default.createElement(_gui2.default, {
+            enableCommunity: true,
+            isPlayerOnly: isPlayerOnly
+        })
+    );
 };
+
+Player.propTypes = {
+    isPlayerOnly: _propTypes2.default.bool,
+    onSeeInside: _propTypes2.default.func
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        isPlayerOnly: state.scratchGui.mode.isPlayerOnly
+    };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+    return {
+        onSeeInside: function onSeeInside() {
+            return dispatch((0, _mode.setPlayer)(false));
+        }
+    };
+};
+
+var ConnectedPlayer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Player);
+var WrappedPlayer = (0, _hashParserHoc2.default)((0, _appStateHoc2.default)(ConnectedPlayer));
+
+var appTarget = document.createElement('div');
+document.body.appendChild(appTarget);
+
+_reactDom2.default.render(_react2.default.createElement(WrappedPlayer, { isPlayerOnly: true }), appTarget);
 
 /***/ }),
 
-/***/ 395:
+/***/ 1472:
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(394);
+var content = __webpack_require__(1473);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -37,7 +127,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(3)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -45,70 +135,23 @@ if(false) {}
 
 /***/ }),
 
-/***/ 396:
+/***/ 1473:
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+exports = module.exports = __webpack_require__(3)(false);
+// imports
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+// module
+exports.push([module.i, ".player_stage-only_3WHZN {\n    width: calc(480px + 1rem);\n}\n\n.player_stage-only_3WHZN * {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n", ""]);
 
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(32);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _box = __webpack_require__(16);
-
-var _box2 = _interopRequireDefault(_box);
-
-var _gui = __webpack_require__(147);
-
-var _gui2 = _interopRequireDefault(_gui);
-
-var _hashParserHoc = __webpack_require__(109);
-
-var _hashParserHoc2 = _interopRequireDefault(_hashParserHoc);
-
-var _appStateHoc = __webpack_require__(108);
-
-var _appStateHoc2 = _interopRequireDefault(_appStateHoc);
-
-var _player = __webpack_require__(395);
-
-var _player2 = _interopRequireDefault(_player);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var WrappedGui = (0, _hashParserHoc2.default)((0, _appStateHoc2.default)(_gui2.default));
-
-if ("production" === 'production' && (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
-    // Warn before navigating away
-    window.onbeforeunload = function () {
-        return true;
-    };
-}
-
-var Player = function Player() {
-    return _react2.default.createElement(
-        _box2.default,
-        { className: _player2.default.stageOnly },
-        _react2.default.createElement(WrappedGui, {
-            isPlayerOnly: true,
-            isFullScreen: false
-        })
-    );
+// exports
+exports.locals = {
+	"stage-only": "player_stage-only_3WHZN",
+	"stageOnly": "player_stage-only_3WHZN"
 };
-
-var appTarget = document.createElement('div');
-document.body.appendChild(appTarget);
-
-_reactDom2.default.render(_react2.default.createElement(Player, null), appTarget);
 
 /***/ })
 
-},[[396,0]]]);
+},[[1471,0]]]);
 //# sourceMappingURL=player.js.map
